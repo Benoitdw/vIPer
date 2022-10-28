@@ -1,4 +1,4 @@
-# VIP
+# vIPer
 
 Here there is the python code relative to the paper "Calculating vertical ionization potentials of DNA stacks" (M.Rooman and F. Puccim submitted).
 
