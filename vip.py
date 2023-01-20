@@ -1,7 +1,7 @@
 import pandas as pd
 import math
 import numpy as np
-df = pd.read_csv ('Vipvalues2.csv')
+df = pd.read_csv ('Vipvalues.csv')
 Seq =[]
 
 def Reverse(lst):
@@ -9,7 +9,7 @@ def Reverse(lst):
     return new_lst
 
 
-data = np.genfromtxt("Vipvalues2.csv", dtype= str, encoding = None, delimiter=",")
+data = np.genfromtxt("Vipvalues.csv", dtype= str, encoding = None, delimiter=",")
 
 
 Seq=np.transpose(data)[0]
