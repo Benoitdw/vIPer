@@ -2,7 +2,7 @@
 name = "viper"
 version = "1.0.0"
 description = "Here there is the new python code relative to the paper \"Estimating the vertical ionization potential of single-stranded DNA molecules\" (M.Rooman and F. Pucci, submitted)."
-authors = ["Your Name <you@example.com>"]
+authors = ["PUCCI Fabrizio <fabrizio.pucci@ulb.be>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
