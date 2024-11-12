@@ -14,13 +14,17 @@ pip install "git+https://git@github.com/Benoitdw/vIPer.git"
 
 ## RUN
 
-```bash
-pip install -r requirements.txt
-```
+```python
+from viper import Viper
 
-## DEV
+# All these call will return 7.5826 as is it single strand
+Viper().compute_score("GAC")
+Viper().compute_score("GAC", double_strand=False)
+Viper().compute_single_strand_score("GAC")
 
-```bash
-pip install -r requirements.dev.txt
-pre-commit install
+
+# All these call will return 7.5826 as is it double strand
+Viper().compute_score("GAC")
+Viper().compute_score("GAC", double_strand=True)
+Viper().compute_double_strand_score("GAC")
 ```

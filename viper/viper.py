@@ -1,23 +1,23 @@
 import math
 import numpy as np
 from pathlib import Path
-from src.utils import reverse_complement
+from viper.utils import reverse_complement
 import typing as t
 
 
-class Vipper:
+class Viper:
     def __init__(self, vip_values_path: Path = None) -> None:
         self.vip_values: t.Dict[str, float] = self.load_vip_value(
             vip_values_path
-            or Path(__file__).parent.parent.resolve() / "ressource" / "Vipvalues.csv"
+            or Path(__file__).parent.resolve() / "ressources" / "Vipvalues.csv"
         )
 
-    def compute_score(self, input_seq: str, double_strand: bool = False) -> float:
+    def compute_score(self, input_seq: str, double_strand: bool = False) -> np.float64:
         if double_strand:
             return self.compute_double_strand_score(input_seq=input_seq)
         return self.compute_single_strand_score(input_seq=input_seq)
 
-    def compute_single_strand_score(self, input_seq: str) -> float:
+    def compute_single_strand_score(self, input_seq: str) -> np.float64:
         self.validate_input(input_seq=input_seq)
         if len(input_seq) < 6:
             return self.vip_values[input_seq]
@@ -40,7 +40,7 @@ class Vipper:
             * np.exp(0.56074 * (pow(len(input_seq) - nb_chunck + 1, -0.145481) - 1))
         )
 
-    def compute_double_strand_score(self, input_seq: str) -> float:
+    def compute_double_strand_score(self, input_seq: str) -> np.float64:
         return (
             self.compute_single_strand_score(input_seq=input_seq)
             + self.compute_single_strand_score(input_seq=reverse_complement(input_seq))
