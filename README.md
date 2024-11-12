@@ -12,6 +12,25 @@ OR
 pip install "git+https://git@github.com/Benoitdw/vIPer.git"
 ```
 
+## Use the CLI
+
+### Installation
+
+```bash
+git clone https://git@github.com/Benoitdw/vIPer.git
+cd vIPer
+pip install -r requirements.txt
+```
+
+### Usage
+
+```bash
+python cli.py ATCG # Single strand as default
+# The vIP value (single strand) is 7.3156
+python cli.py ATCG -D # Double strand
+# The vIP value (double strand) is 7.2875
+```
+
 ## RUN
 
 ```python
