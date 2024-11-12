@@ -20,7 +20,7 @@ class Viper:
     def compute_single_strand_score(self, input_seq: str) -> np.float64:
         self.validate_input(input_seq=input_seq)
         if len(input_seq) < 6:
-            return self.vip_values[input_seq]
+            return np.float64(self.vip_values[input_seq])
         nb_chunck = len(input_seq) - 3
         results, factors = np.zeros(nb_chunck, float), np.zeros(nb_chunck, float)
         for i in range(nb_chunck):
